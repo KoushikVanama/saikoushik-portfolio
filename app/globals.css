@@ -6,6 +6,9 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --primary-color: #04C2C9;
+  --heading-color: #E31B6D;
+  --gray-color: #808080;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,12 +19,43 @@
   }
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /* color: rgb(var(--foreground-rgb)); */
+  /* background: linear-gradient(
+    to bottom,
+    transparent,
+    rgb(var(--background-end-rgb))
+  )
+  rgb(var(--background-start-rgb)); */
+}
+
+.home{
+  background-image: url(../public/IMG_0431.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.about, .contact-form{
+  height: 100vh;
+}
+
+input, textarea {
+  outline: none;
+}
+
+@media only screen and (max-width: 501px) {
+  .home {
+    width: 100%;
+    height: auto;
+  }
 }
