@@ -7,8 +7,12 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --primary-color: #04C2C9;
+  --primary-bg-color: #00A1A7;
   --heading-color: #E31B6D;
   --gray-color: #808080;
+  --gray-bg-color: #eee;
+  --gray-cent-color: #666;
+  --white-color: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,17 +30,8 @@
   scroll-behavior: smooth;
 }
 
-body {
-  /* color: rgb(var(--foreground-rgb)); */
-  /* background: linear-gradient(
-    to bottom,
-    transparent,
-    rgb(var(--background-end-rgb))
-  )
-  rgb(var(--background-start-rgb)); */
-}
 
-.home{
+#home {
   background-image: url(../public/IMG_0431.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -45,17 +40,41 @@ body {
   height: 100vh;
 }
 
-.about, .contact-form{
-  height: 100vh;
+.bar {
+  position: relative;
+  height: 28px;
+  background-color: var(--gray-bg-color);
+  color: var(--gray-cent-color);
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+  margin-bottom: 12px;
 }
 
-input, textarea {
-  outline: none;
+.bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--primary-bg-color);
+  height: 28px;
 }
 
-@media only screen and (max-width: 501px) {
-  .home {
-    width: 100%;
+.bar-tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  height: 28px;
+  width: 6rem;
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+}
+
+@media only screen and (max-width: 520px) {
+  #home {
+    background-position: right;
     height: auto;
   }
 }

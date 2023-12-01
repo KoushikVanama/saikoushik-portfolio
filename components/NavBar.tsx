@@ -10,7 +10,7 @@ const NavBar = () => {
         setIsActive(!isActive);
     }
     return (
-        <nav className="absolute flex flex-wrap p-5 w-full bg-transparent text-white z-10">
+        <nav className={`${isActive ? "bg-primary-color duration-1000 pb-10 bg-opacity-50" : "bg-transparent"} absolute flex flex-wrap p-5 w-full text-white z-10`}>
             <button onClick={handleClick} className="lg:hidden inline-flex self-end ml-auto outline-none">
                 <Menu className="h-8 w-8" />
             </button>
