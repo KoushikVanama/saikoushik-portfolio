@@ -7,7 +7,7 @@ const About = () => {
                 <div className="lg:w-[50%] w-full">
                     <div>
                         <ul className="list-disc marker:text-primary-color list-outside">
-                            <li>Expertise in developing web applications from 7 years.</li>
+                            <li>Expertise in building web applications from 7 years.</li>
                             <li>Currently learning Python.</li>
                             <li>Fascinated with WebSockets and WebRTC technologies.</li>
                         </ul>

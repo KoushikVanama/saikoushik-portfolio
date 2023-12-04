@@ -1,5 +1,5 @@
 import { database } from "@/firebase-config";
-import { push, ref, set } from "firebase/database";
+import { addDoc, collection } from "firebase/firestore";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
@@ -10,18 +10,11 @@ export async function POST(req: Request) {
             throw new Error(!name ? "name should be provided" : "email should be provided");
         }
 
-        const usersRef = ref(database, "users");
-        const newUserRef = push(usersRef);
-        set(newUserRef, {
-            name,
-            email,
-            message
-        }).then(console.log)
-            .catch(error => {
-                console.log(error);
-            });
-
-        return NextResponse.json("User added successfully", { status: 201 });
+        let userObj = {
+            name, email, message
+        };
+        const docRef = await addDoc(collection(database, "users"), { userObj });
+        return NextResponse.json(`User added successfully with id ${docRef.id}`, { status: 201 });
     } catch (error) {
         console.log("[CONTACT] POST", error);
         return new NextResponse("Internal server error", { status: 500 });

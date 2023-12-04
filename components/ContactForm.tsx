@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 interface ContactFormInput {
@@ -14,8 +15,10 @@ const ContactForm = () => {
         console.log(data, "formData");
         const response = await fetch(`api/contact`, { method: 'POST', body: JSON.stringify(data) });
         const result = await response.json();
-        console.log(result, "ResultResultResultResultResult")
     }
+    useEffect(() => {
+        console.log("%cThanks for visiting my site. You can contact me on +91-9603587689 if you are intersted in my portfolio. Cheers!", "background: #000; color: #04C2C9");
+    });
     return (
         <div className="flex flex-col text-center justify-center bg-slate-800 h-full w-full lg:h-[100vh]">
             <h1 className="text-center text-white font-bold text-2xl mt-5">CONTACT</h1>

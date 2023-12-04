@@ -1,3 +1,5 @@
+import { MoveDown } from "lucide-react";
+
 const Intro = () => {
     return (
         <div className="w-full h-full flex flex-col justify-center items-center pb-28">
@@ -7,8 +9,8 @@ const Intro = () => {
                 </h1>
                 <h3 className="lg:text-4xl text-3xl py-2 font-bold text-white">I&apos;m a full stack developer.</h3>
             </div>
-            <a href="#about" className="flex justify-center p-2 my-5 text-center border-2 hover:bg-primary-color duration-700 border-white w-[8rem] h-[3rem] text-white text-xl">
-                About me
+            <a href="#about" className="flex justify-center items-center gap-2 p-2 my-5 text-center border-2 hover:bg-primary-color duration-700 border-white w-[9rem] h-[3rem] text-white text-xl">
+                About me <MoveDown className="w-4 h-5 text-white" strokeWidth={4} />
             </a>
         </div>
     )

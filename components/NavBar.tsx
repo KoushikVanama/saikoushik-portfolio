@@ -22,7 +22,7 @@ const NavBar = () => {
                     <Link href="#about" className="lg:inline-flex lg:w-auto w-full px-5 items-center justify-center font-semibold text-2xl hover:text-primary-color">
                         About
                     </Link>
-                    <Link href="/" target="_blank" className="lg:inline-flex lg:w-auto w-full px-5 items-center justify-center font-semibold text-2xl hover:text-primary-color">
+                    <Link href={"../VanamaSaiVenkataKoushik.pdf"} target="_blank" className="lg:inline-flex lg:w-auto w-full px-5 items-center justify-center font-semibold text-2xl hover:text-primary-color">
                         Resume
                     </Link>
                     <Link href="#contact" className="lg:inline-flex lg:w-auto w-full px-5 items-center justify-center font-semibold text-2xl hover:text-primary-color">
