@@ -1,37 +1,28 @@
 "use client";
 
-import { Menu } from "lucide-react";
-import Link from "next/link";
+import { FileDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 
-const NavBar = () => {
-    const [isActive, setIsActive] = useState(false);
-    const handleClick = () => {
-        setIsActive(!isActive);
-    }
-    return (
-        <nav className={`${isActive ? "bg-primary-color duration-1000 pb-10 bg-opacity-50" : "bg-transparent"} absolute flex flex-wrap p-5 w-full text-white z-10`}>
-            <button onClick={handleClick} className="lg:hidden inline-flex self-end ml-auto outline-none">
-                <Menu className="h-8 w-8" />
-            </button>
-            <div className={`${isActive ? "" : "hidden"} w-full lg:inline-flex lg:flex-grow lg:w-auto`}>
-                <div className="lg:inline-flex lg:flex-grow lg:w-auto lg:items-center gap-y-3 justify-end flex flex-col lg:flex-row lg:h-auto">
-                    <Link href="/" className="lg:inline-flex lg:w-auto w-full px-5 items-center justify-center font-semibold text-2xl hover:text-primary-color">
-                        Home
-                    </Link>
-                    <Link href="#about" className="lg:inline-flex lg:w-auto w-full px-5 items-center justify-center font-semibold text-2xl hover:text-primary-color">
-                        About
-                    </Link>
-                    <Link href={"../VanamaSaiVenkataKoushik.pdf"} target="_blank" className="lg:inline-flex lg:w-auto w-full px-5 items-center justify-center font-semibold text-2xl hover:text-primary-color">
-                        Resume
-                    </Link>
-                    <Link href="#contact" className="lg:inline-flex lg:w-auto w-full px-5 items-center justify-center font-semibold text-2xl hover:text-primary-color">
-                        Contact
-                    </Link>
-                </div>
-            </div>
-        </nav>
-    )
-}
+const links = [
+  ["01.", "Home", "home"],
+  ["02.", "About", "about"],
+  ["03.", "Experience", "experience"],
+  ["04.", "Projects", "projects"],
+  ["05.", "Contact", "contact"],
+];
 
-export default NavBar;
+export default function NavBar() {
+  const [open, setOpen] = useState(false);
+  return (
+    <header className="site-header">
+      <nav className="nav-shell" aria-label="Main navigation">
+        <a className="wordmark" href="#home" onClick={() => setOpen(false)}><span>&lt;</span>vsvkoushik.dev<span className="wordmark-close"> /&gt;</span></a>
+        <button className="menu-toggle" type="button" aria-expanded={open} aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen(!open)}>{open ? <X size={22} /> : <Menu size={22} />}</button>
+        <div className={`nav-links${open ? " nav-links-open" : ""}`}>
+          {links.map(([number, label, id]) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)}><span>{number}</span> {label}</a>)}
+          <a className="nav-resume" href="/VanamaSaiVenkataKoushik.pdf" target="_blank" rel="noreferrer"><FileDown size={15} /> Résumé</a>
+        </div>
+      </nav>
+    </header>
+  );
+}

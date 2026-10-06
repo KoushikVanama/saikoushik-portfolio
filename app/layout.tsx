@@ -1,13 +1,15 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export const metadata: Metadata = {
-  title: 'Sai Koushik | Full stack developer',
-  description: 'Portfolio',
+  manifest: "manifest.json",
+  title: 'Sai Venkata Koushik Vanama | Senior AI Engineer',
+  description: 'Portfolio of Sai Venkata Koushik Vanama, Senior AI Engineer at Fractal Analytics. Agentic AI, full-stack engineering, and production systems.',
 }
+
+export const viewport: Viewport = {
+  themeColor: "#090b11",
+};
 
 export default function RootLayout({
   children,
@@ -16,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }

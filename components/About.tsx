@@ -1,141 +1,41 @@
-const About = () => {
-    return (
-        <div className="flex flex-col lg:h-[100vh]">
-            <div className="text-center font-bold text-zinc-800 mt-10 text-2xl">ABOUT</div>
-            <div className="self-center w-12 border-zinc-600 border-b-4 py-1"></div>
-            <div className="flex lg:px-12 m-12 flex-col lg:flex-row gap-y-10">
-                <div className="lg:w-[50%] w-full">
-                    <div>
-                        <ul className="list-disc marker:text-primary-color list-outside">
-                            <li>Expertise in building web applications from 8 years.</li>
-                            <li>Currently learning Python.</li>
-                            <li>Fascinated with WebSockets and WebRTC technologies.</li>
-                        </ul>
-                        <br />
-                        <div className="italic font-semibold">Frameworks</div>
-                        <p className="my-2">
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">NodeJS</span>
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">NestJS</span>
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">NextJS</span>
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">AngularJS</span>
-                        </p>
-                        <div className="italic font-semibold">Languages</div>
-                        <p className="my-2">
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">Javascript</span>
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">Typescript</span>
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">C</span>
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">HTML</span>
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">CSS</span>
-                        </p>
-                        <div className="italic font-semibold">Libraries / Packages</div>
-                        <p className="my-2">
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">ReactJS</span>
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">Socket.io</span>
-                        </p>
-                        <div className="italic font-semibold">Database</div>
-                        <p className="my-2">
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">PostgreSQL</span>
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">Firebase</span>
-                        </p>
-                        <div className="italic font-semibold">ORM</div>
-                        <p className="my-2">
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">Sequalize</span>
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">Prisma</span>
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">Typeorm</span>
-                        </p>
-                        <div className="italic font-semibold">Misc.</div>
-                        <p className="my-2">
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">Photoshop</span>
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">Jest</span>
-                            <span className="bg-primary-color p-1 mr-2 rounded text-white">TDD</span>
-                        </p>
-                    </div>
-                </div>
-                <div className="lg:w-[50%] w-full px-2 lg:px-36">
-                    <div className="bar">
-                        <div className="bar-fill w-[70%]">
-                            <div className="bar-tag">
-                                Javascript
-                            </div>
-                        </div>
-                        <span className="mx-1">70%</span>
-                    </div>
-                    <div className="bar">
-                        <div className="bar-fill w-[75%]">
-                            <div className="bar-tag">
-                                HTML
-                            </div>
-                        </div>
-                        <span className="mx-1">75%</span>
-                    </div>
-                    <div className="bar">
-                        <div className="bar-fill w-[60%]">
-                            <div className="bar-tag">
-                                CSS
-                            </div>
-                        </div>
-                        <span className="mx-1">60%</span>
-                    </div>
-                    <div className="bar">
-                        <div className="bar-fill w-[80%]">
-                            <div className="bar-tag">
-                                ReactJS
-                            </div>
-                        </div>
-                        <span className="mx-1">80%</span>
-                    </div>
-                    <div className="bar">
-                        <div className="bar-fill w-[70%]">
-                            <div className="bar-tag">
-                                NodeJS
-                            </div>
-                        </div>
-                        <span className="mx-1">70%</span>
-                    </div>
-                    <div className="bar">
-                        <div className="bar-fill w-[60%]">
-                            <div className="bar-tag">
-                                NextJS
-                            </div>
-                        </div>
-                        <span className="mx-1">60%</span>
-                    </div>
-                    <div className="bar">
-                        <div className="bar-fill w-[85%]">
-                            <div className="bar-tag">
-                                NestJS
-                            </div>
-                        </div>
-                        <span className="mx-1">85%</span>
-                    </div>
-                    <div className="bar">
-                        <div className="bar-fill w-[25%]">
-                            <div className="bar-tag">
-                                AWS
-                            </div>
-                        </div>
-                        <span className="mx-1">25%</span>
-                    </div>
-                    <div className="bar">
-                        <div className="bar-fill w-[30%]">
-                            <div className="bar-tag">
-                                Photoshop
-                            </div>
-                        </div>
-                        <span className="mx-1">30%</span>
-                    </div>
-                    <div className="bar">
-                        <div className="bar-fill w-[70%]">
-                            <div className="bar-tag">
-                                Typescript
-                            </div>
-                        </div>
-                        <span className="mx-1">70%</span>
-                    </div>
-                </div>
-            </div>
-        </div >
-    )
-}
+import { Award, GraduationCap, MapPin, Radio } from "lucide-react";
 
-export default About;
+const skillGroups = [
+  { label: "AI / LLM", items: ["Agentic AI", "AutoGen", "LangChain", "LangGraph", "RAG", "MAF", "Prompt engineering", "GenAI"] },
+  { label: "Backend", items: ["Node.js", "Python", "NestJS", "Next.js"] },
+  { label: "Frontend", items: ["React", "Angular", "TypeScript", "JavaScript"] },
+  { label: "Cloud & DevOps", items: ["Kubernetes", "Docker", "CI/CD", "Azure", "AWS"] },
+  { label: "Data & systems", items: ["SQL", "MongoDB", "WebSockets", "System design"] },
+];
+
+export default function About() {
+  return (
+    <section id="about" className="section section-muted">
+      <div className="section-shell">
+        <div className="section-heading">
+          <p className="eyebrow">01 <span>·</span> ABOUT</p>
+          <h2>Engineering with a sense of ownership.</h2>
+          <p className="section-intro">From banking platforms to agentic AI, I enjoy turning complex ideas into software people can rely on. I care about the quiet work behind good products: clear interfaces, resilient services, useful observability, and a smooth path to production.</p>
+        </div>
+        <div className="about-grid">
+          <div className="about-left">
+            <article className="info-card facts-card">
+              <h3>Quick facts</h3>
+              <div className="fact-row"><MapPin size={17} /><p>Bengaluru, India <span>·</span> IST <span>·</span> UTC+5:30</p></div>
+              <div className="fact-row"><Award size={17} /><p>Recognized for outstanding contributions at Société Générale and Cisco Systems; recipient of a Newbie Award early in my career.</p></div>
+              <div className="fact-row"><GraduationCap size={18} /><p>B.Tech, Computer Science &amp; Engineering <span>·</span> KL University <span>·</span> CGPA 7.8/10</p></div>
+            </article>
+            <article className="info-card realtime-card">
+              <div className="card-icon"><Radio size={18} /></div>
+              <div><h3>Fascinated by realtime</h3><p>WebSockets and WebRTC keep me curious. I like building the connective tissue that makes collaborative products feel alive.</p></div>
+            </article>
+          </div>
+          <article className="info-card skill-card">
+            <div className="skill-card-heading"><div><p className="eyebrow">TOOLS I REACH FOR</p><h3>Skill matrix</h3></div><span className="skill-caption">Grouped by where they fit in the stack.</span></div>
+            <div className="skill-groups">{skillGroups.map((group, index) => <div className="skill-group" key={group.label}><div className="skill-group-title"><span>0{index + 1}</span>{group.label}</div><div className="skill-pills">{group.items.map((item) => <span className="skill-pill" key={item}>{item}</span>)}</div></div>)}</div>
+          </article>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,30 +1,7 @@
-import { Github, Linkedin, Twitter } from "lucide-react"
+import { ArrowUpRight, Github, Linkedin } from "lucide-react";
 
-const Footer = () => {
-    return (
-        <>
-            <div className="flex justify-center items-center min-h-[8rem] gap-x-5 bg-zinc-800">
-                <div className="flex justify-center items-center w-12 h-12 bg-slate-900 background-0.3s">
-                    <a href="https://www.linkedin.com/in/koushikvsv/" target="_blank">
-                        <Linkedin strokeWidth={2} className="w-6 h-6 text-primary-color" />
-                    </a>
-                </div>
-                <div className="flex justify-center items-center w-12 h-12 bg-slate-900">
-                    <a href="https://github.com/KoushikVanama" target="_blank">
-                        <Github strokeWidth={2} className="w-6 h-6 text-primary-color" />
-                    </a>
-                </div>
-                <div className="flex justify-center items-center w-12 h-12 bg-slate-900">
-                    <a href="https://twitter.com/sai_vsv" target="_blank">
-                        <Twitter strokeWidth={2} className="w-6 h-6 text-primary-color" />
-                    </a>
-                </div>
-            </div>
-            <div className="flex justify-center items-center text-white/70 py-5 bg-zinc-800">
-                <p>&copy; Copyright 2023 - All rights reserved.</p>
-            </div>
-        </>
-    )
+export default function Footer() {
+  return (
+    <div className="footer-shell"><div className="footer-main"><div><a className="wordmark" href="#home"><span>&lt;</span>vsvkoushik.dev<span className="wordmark-close"> /&gt;</span></a><p>Senior AI Engineer · Bengaluru, India<br />Building reliable software and applied AI.</p></div><div className="footer-nav"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div><div className="footer-social"><a href="https://github.com/koushikvanama" aria-label="GitHub" target="_blank" rel="noreferrer"><Github size={17} /></a><a href="https://www.linkedin.com/in/koushikvsv/" aria-label="LinkedIn" target="_blank" rel="noreferrer"><Linkedin size={17} /></a><a href="https://vsvkoushik.in" aria-label="Personal website" target="_blank" rel="noreferrer"><ArrowUpRight size={17} /></a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Sai Venkata Koushik Vanama</span><a href="#home">Back to top ↑</a></div></div>
+  );
 }
-
-export default Footer;

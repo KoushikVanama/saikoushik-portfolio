@@ -1,47 +1,54 @@
 "use client";
 
-import { useEffect } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { ArrowUpRight, Check, Mail, MapPin, Phone } from "lucide-react";
+import { FormEvent, useState } from "react";
 
-interface ContactFormInput {
-    name: string;
-    email: string;
-    message: string;
-}
+const contacts = [
+  { icon: Mail, label: "EMAIL", value: "koushik.vanama@gmail.com", href: "mailto:koushik.vanama@gmail.com" },
+  { icon: Phone, label: "PHONE", value: "+91 96035 87689", href: "tel:+919603587689" },
+  { icon: MapPin, label: "LOCATION", value: "Bengaluru, India · IST · UTC+5:30", href: "https://maps.google.com/?q=Bengaluru,India" },
+];
 
-const ContactForm = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm<ContactFormInput>();
-    const onSubmit: SubmitHandler<ContactFormInput> = async (data) => {
-        console.log(data, "formData");
-        const response = await fetch(`api/contact`, { method: 'POST', body: JSON.stringify(data) });
-        const result = await response.json();
+export default function ContactForm() {
+  const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setState("sending");
+    const form = event.currentTarget;
+    const values = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      setState(response.ok ? "sent" : "error");
+    } catch {
+      setState("error");
     }
-    useEffect(() => {
-        console.log("%cThanks for visiting my site. You can contact me on +91-9603587689 if you are intersted in my portfolio. Cheers!", "background: #000; color: #04C2C9");
-    });
-    return (
-        <div className="flex flex-col text-center justify-center bg-slate-800 h-full w-full lg:h-[100vh]">
-            <h1 className="text-center text-white font-bold text-2xl mt-5">CONTACT</h1>
-            <div className="self-center w-12 text-white border-b-4 py-2 mb-10"></div>
-            <p className="text-primary-color mx-5">If you want to get in touch, submit the form below or send an e-mail to <span className="hover:bg-white">koushik.vanama@gmail.com</span> and let's talk.</p>
-            <div className="form-wrapper flex justify-center gap-y-2 my-8">
-                <form className="flex flex-col gap-y-1 w-[25rem] items-center" onSubmit={handleSubmit(onSubmit)}>
-                    <input placeholder="Your name" className="p-1 w-full outline-none bg-none border-2 border-gray-600 focus:border-primary-color placeholder:text-black" autoComplete="off" {...register("name", { required: true, minLength: 1, maxLength: 20 })} />
-                    {errors.name?.type === 'required' && <p className="flex justify-start w-full text-white -mt-1 bg-primary-color text-xs px-1">Name is required</p>}
-                    <input placeholder="Your e-mail" className="p-1 w-full outline-none bg-none border-2 border-gray-600 focus:border-primary-color placeholder:text-black" autoComplete="off" {...register("email", {
-                        required: true, minLength: 1, maxLength: 20, pattern: {
-                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                            message: "invalid email address"
-                        }
-                    })} />
-                    {errors.email?.type === 'required' && <p className="flex justify-start w-full text-white -mt-1 bg-primary-color text-xs px-1">E-mail is required</p>}
-                    {errors.email?.message && <p className="flex justify-start w-full text-white -mt-1 bg-primary-color text-xs px-1">E-mail is not valid</p>}
-                    <textarea placeholder="Your message" className=" w-full p-2 outline-none bg-none border-2 border-gray-600 focus:border-primary-color min-h-[8rem] placeholder:text-black" autoComplete="off" {...register("message", { required: false, minLength: 1 })} />
-                    <button className="flex my-5 p-2 justify-center border-2 border-white w-[8rem] text-white hover:bg-primary-color hover:text-slate-900 duration-300" type="submit">SUBMIT</button>
-                </form>
-            </div>
-        </div >
-    )
-}
+  }
 
-export default ContactForm;
+  return (
+    <section id="contact" className="section contact-section">
+      <div className="section-shell contact-shell">
+        <div className="contact-copy"><p className="eyebrow">04 <span>·</span> CONTACT</p><h2>Have an interesting problem?</h2><p className="section-intro">I&apos;m open to thoughtful conversations about agentic AI, full-stack engineering, and building products that matter. Let&apos;s talk.</p>
+          <div className="contact-methods">{contacts.map(({ icon: Icon, label, value, href }) => <a className="contact-method" href={href} key={label} target={label === "LOCATION" ? "_blank" : undefined} rel={label === "LOCATION" ? "noreferrer" : undefined}><span className="contact-icon"><Icon size={18} /></span><span className="contact-value"><small>{label}</small><strong>{value}</strong></span><ArrowUpRight className="contact-arrow" size={16} /></a>)}</div>
+        </div>
+        <div className="contact-form-panel">
+          {state === "sent" ? <div className="form-success" role="status"><span className="success-icon"><Check size={24} /></span><h3>Message received</h3><p>Thanks for reaching out. I&apos;ll reply to the email address you left, usually within a day.</p><button className="button button-quiet" type="button" onClick={() => { setState("idle"); }}>Send another message</button></div> : <>
+            <div className="form-heading"><div><p className="eyebrow">DROP ME A NOTE</p><h3>Let&apos;s start a conversation.</h3></div><span className="form-heading-icon"><Mail size={19} /></span></div>
+            <form className="contact-form" onSubmit={handleSubmit} onChange={() => state === "error" && setState("idle")}>
+              <label htmlFor="contact-name">Your name</label><input id="contact-name" name="name" placeholder="How should I address you?" autoComplete="name" required maxLength={80} />
+              <label htmlFor="contact-email">Email address</label><input id="contact-email" name="email" type="email" placeholder="you@example.com" autoComplete="email" required maxLength={254} />
+              <label htmlFor="contact-message">What would you like to discuss?</label><textarea id="contact-message" name="message" placeholder="A little context helps me get back to you..." rows={4} maxLength={4000} />
+              {state === "error" && <p className="form-error" role="alert">I couldn&apos;t send your message just now. Please try again or email me directly.</p>}
+              <div className="form-submit-row"><p>I&apos;ll use your details to reply.</p><button className="button button-primary" type="submit" disabled={state === "sending"}>{state === "sending" ? "Sending…" : <>Send message <ArrowUpRight size={16} /></>}</button></div>
+            </form>
+          </>}
+        </div>
+      </div>
+    </section>
+  );
+}
