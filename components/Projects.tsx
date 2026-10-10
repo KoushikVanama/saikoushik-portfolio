@@ -2,7 +2,7 @@ import { ArrowUpRight, Folder } from "lucide-react";
 
 const projects = [
   { number: "01", title: "Vaidya.ai", type: "AI · Fullstack · Health Assistant", description: "A production grade AI chatbot — health assistant.  to provide personalized health advice and guidance.", tags: ["Python", "LLM", "GenAI", "DevOps", "LLM Orchestration", "Next.js", "React"], tone: "project-cyan" },
-  { number: "02", title: "Freshdirect", type: "UI Developer · E-Commerce", description: "A grocery delivery platform. Built using modern web technologies to provide a seamless grocery delivery experience.", tags: ["TypeScript", "Angular", "CSS", "HTML"], tone: "project-violet" },
+  { number: "02", title: "FreshDirect.com", type: "UI Developer · E-Commerce", description: "A grocery delivery platform. Built using modern web technologies to provide a seamless grocery delivery experience.", tags: ["TypeScript", "Angular", "CSS", "HTML"], tone: "project-violet" },
 ];
 
 export default function Projects() {
