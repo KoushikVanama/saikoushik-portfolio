@@ -5,8 +5,7 @@ import { FormEvent, useState } from "react";
 
 const contacts = [
   { icon: Mail, label: "EMAIL", value: "koushik.vanama@gmail.com", href: "mailto:koushik.vanama@gmail.com" },
-  { icon: Phone, label: "PHONE", value: "+91 96035 87689", href: "tel:+919603587689" },
-  { icon: MapPin, label: "LOCATION", value: "Bengaluru, India · IST · UTC+5:30", href: "https://maps.google.com/?q=Bengaluru,India" },
+  { icon: Phone, label: "PHONE", value: "+91 96035 87689", href: "tel:+919603587689" }
 ];
 
 export default function ContactForm() {
@@ -44,7 +43,8 @@ export default function ContactForm() {
               <label htmlFor="contact-email">Email address</label><input id="contact-email" name="email" type="email" placeholder="you@example.com" autoComplete="email" required maxLength={254} />
               <label htmlFor="contact-message">What would you like to discuss?</label><textarea id="contact-message" name="message" placeholder="A little context helps me get back to you..." rows={4} maxLength={4000} />
               {state === "error" && <p className="form-error" role="alert">I couldn&apos;t send your message just now. Please try again or email me directly.</p>}
-              <div className="form-submit-row"><p>I&apos;ll use your details to reply.</p><button className="button button-primary" type="submit" disabled={state === "sending"}>{state === "sending" ? "Sending…" : <>Send message <ArrowUpRight size={16} /></>}</button></div>
+              {/* <div className="form-submit-row"><p>I&apos;ll use your details to reply.</p><button className="button button-primary" type="submit" disabled={state === "sending"}>{state === "sending" ? "Sending…" : <>Send message <ArrowUpRight size={16} /></>}</button></div> */}
+              <div className="form-submit-row"><button className="button button-primary" type="submit" disabled={state === "sending"}>{state === "sending" ? "Sending…" : <>Send message <ArrowUpRight size={16} /></>}</button></div>
             </form>
           </>}
         </div>

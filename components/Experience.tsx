@@ -11,7 +11,7 @@ const roles = [
     stack: ["Agentic AI", "LangGraph", "Python", "Kubernetes", "System design"],
   },
   {
-    company: "Société Générale", location: "Bengaluru", dates: "Mar 2020 — Mar 2024", title: "Specialist Software Engineer · Full Stack", current: false,
+    company: "Société Générale", location: "Bengaluru", dates: "Mar 2020 — Mar 2024", title: "Specialist Software Engineer", current: false,
     highlights: [
       "Delivered and maintained eight enterprise BCM applications with high availability and performance requirements.",
       "Designed Docker and Kubernetes CI/CD pipelines for zero-downtime deployments and faster releases.",
@@ -33,7 +33,7 @@ const roles = [
       "Built and maintained application modules, ramping up on Angular and React to help teams ship on schedule.",
       "Contributed to eSD, an electronic supplier diagnostics platform for Jaguar Land Rover, and received a Cisco Systems Special Mention for technical delivery.",
     ],
-    stack: ["Angular", "React", "Enterprise web"],
+    stack: ["Angular", "React"],
   },
 ];
 
@@ -43,7 +43,7 @@ export default function Experience() {
       <div className="section-shell">
         <div className="section-heading section-heading-row">
           <div><p className="eyebrow">02 <span>·</span> EXPERIENCE</p><h2>A decade of building, learning, shipping.</h2></div>
-          <p className="section-intro">A path through enterprise software and cloud platforms to applied AI in production.</p>
+          {/* <p className="section-intro">A path through enterprise software and cloud platforms to applied AI in production.</p> */}
         </div>
         <div className="experience-list">{roles.map((role, index) => <article className="experience-item" key={role.company}>
           <div className="experience-index">0{index + 1}<span className="timeline-line" /></div>

@@ -25,14 +25,15 @@ export default function About() {
               <div className="fact-row"><Award size={17} /><p>Recognized for outstanding contributions at Société Générale and Cisco Systems; recipient of a Newbie Award early in my career.</p></div>
               <div className="fact-row"><GraduationCap size={18} /><p>B.Tech, Computer Science &amp; Engineering <span>·</span> KL University <span>·</span> CGPA 7.8/10</p></div>
             </article>
-            <article className="info-card realtime-card">
+            {/* <article className="info-card realtime-card">
               <div className="card-icon"><Radio size={18} /></div>
               <div><h3>Fascinated by realtime</h3><p>WebSockets and WebRTC keep me curious. I like building the connective tissue that makes collaborative products feel alive.</p></div>
-            </article>
+            </article> */}
           </div>
           <article className="info-card skill-card">
-            <div className="skill-card-heading"><div><p className="eyebrow">TOOLS I REACH FOR</p><h3>Skill matrix</h3></div><span className="skill-caption">Grouped by where they fit in the stack.</span></div>
-            <div className="skill-groups">{skillGroups.map((group, index) => <div className="skill-group" key={group.label}><div className="skill-group-title"><span>0{index + 1}</span>{group.label}</div><div className="skill-pills">{group.items.map((item) => <span className="skill-pill" key={item}>{item}</span>)}</div></div>)}</div>
+            {/* <div className="skill-card-heading"><div><p className="eyebrow">TOOLS I REACH FOR</p><h3>Skill matrix</h3></div><span className="skill-caption">Grouped by where they fit in the stack.</span></div> */}
+            <div className="skill-card-heading eyebrow"><div><h3>Skill matrix</h3></div></div>
+            <div className="skill-groups">{skillGroups.map((group, index) => <div className="skill-group" key={group.label}><div className="skill-group-title">{group.label}</div><div className="skill-pills">{group.items.map((item) => <span className="skill-pill" key={item}>{item}</span>)}</div></div>)}</div>
           </article>
         </div>
       </div>

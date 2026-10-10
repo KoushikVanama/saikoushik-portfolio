@@ -1,8 +1,8 @@
 import { ArrowUpRight, Folder } from "lucide-react";
 
 const projects = [
-  { number: "01", title: "AI Chatbox", type: "LOCAL AI · LEARNING PROJECT", description: "A hands-on chatbox built around local and pretrained language models: a practical way to explore conversational AI without a cloud bill.", tags: ["JavaScript", "LLM", "GenAI"], tone: "project-cyan" },
-  { number: "02", title: "Discord Clone", type: "REALTIME · FULL STACK", description: "A Discord-inspired application exploring realtime messaging, presence, and channels on a modern TypeScript stack.", tags: ["TypeScript", "WebSockets", "Realtime"], tone: "project-violet" },
+  { number: "01", title: "Vaidya.ai", type: "AI · Fullstack · Health Assistant", description: "A production grade AI chatbot — health assistant.  to provide personalized health advice and guidance.", tags: ["Python", "LLM", "GenAI", "DevOps", "LLM Orchestration", "Next.js", "React"], tone: "project-cyan" },
+  { number: "02", title: "Freshdirect", type: "UI Developer · E-Commerce", description: "A grocery delivery platform. Built using modern web technologies to provide a seamless grocery delivery experience.", tags: ["TypeScript", "Angular", "CSS", "HTML"], tone: "project-violet" },
 ];
 
 export default function Projects() {
@@ -11,7 +11,7 @@ export default function Projects() {
       <div className="section-shell">
         <div className="section-heading section-heading-row">
           <div><p className="eyebrow">03 <span>·</span> PROJECTS</p><h2>Things I build for the love of it.</h2></div>
-          <div className="project-intro"><p className="section-intro">Realtime experiments, LLM tooling, and full-stack systems. Follow along with the code and experiments on GitHub.</p><a className="text-link" href="https://github.com/koushikvanama" target="_blank" rel="noreferrer">Browse my GitHub <ArrowUpRight size={15} /></a></div>
+          {/* <div className="project-intro"><p className="section-intro">Realtime experiments, LLM tooling, and full-stack systems. Follow along with the code and experiments on GitHub.</p><a className="text-link" href="https://github.com/koushikvanama" target="_blank" rel="noreferrer">Browse my GitHub <ArrowUpRight size={15} /></a></div> */}
         </div>
         <div className="project-grid">{projects.map((project) => <article className={`project-card ${project.tone}`} key={project.title}>
           <div className="project-card-top"><span className="project-icon"><Folder size={19} /></span><span className="project-number">{project.number}</span></div>
