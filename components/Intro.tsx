@@ -10,7 +10,7 @@ export default function Intro() {
         <div className="availability"><span className="status-dot" /> Open to opportunities</div>
         <p className="eyebrow">FULL STACK ENGINEERING <span>×</span> APPLIED AI</p>
         <h1>Full stack roots.<br /><span>Agentic AI present.</span></h1>
-        <p className="hero-description">I&apos;m Koushik, a senior AI engineer at Fractal Analytics. For 10 years, I&apos;ve built and shipped web platforms, cloud systems, and production-ready AI experiences.</p>
+        <p className="hero-description">I&apos;m Sai Koushik, a senior AI engineer at Fractal Analytics. For 10 years, I&apos;ve built and shipped web platforms, cloud systems, and production-ready AI experiences.</p>
         <div className="hero-actions">
           <a className="button button-primary" href="#projects">Explore selected work <ArrowDown size={16} /></a>
           <a className="button button-quiet" href={resumePath} target="_blank" rel="noreferrer"><FileDown size={16} /> Download resume</a>
@@ -18,7 +18,7 @@ export default function Intro() {
         <div className="social-links" aria-label="Social profiles">
           <a href="https://github.com/koushikvanama" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={18} /></a>
           <a href="https://www.linkedin.com/in/koushikvsv/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a>
-          <a href="https://vsvkoushik.in" target="_blank" rel="noreferrer" aria-label="Personal website"><ArrowUpRight size={18} /></a>
+          {/* <a href="https://vsvkoushik.in" target="_blank" rel="noreferrer" aria-label="Personal website"><ArrowUpRight size={18} /></a> */}
         </div>
         <div className="hero-metrics" aria-label="Career highlights">
           <div><strong>10</strong><small>years building software</small></div>

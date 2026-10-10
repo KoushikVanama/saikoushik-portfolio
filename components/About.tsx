@@ -1,4 +1,4 @@
-import { Award, GraduationCap, MapPin, Radio } from "lucide-react";
+import { Award, GraduationCap, Joystick, Languages, MapPin, Radio } from "lucide-react";
 
 const skillGroups = [
   { label: "AI / LLM", items: ["Agentic AI", "AutoGen", "LangChain", "LangGraph", "RAG", "MAF", "Prompt engineering", "GenAI"] },
@@ -22,8 +22,12 @@ export default function About() {
             <article className="info-card facts-card">
               <h3>Quick facts</h3>
               <div className="fact-row"><MapPin size={17} /><p>Bengaluru, India <span>·</span> IST <span>·</span> UTC+5:30</p></div>
-              <div className="fact-row"><Award size={17} /><p>Recognized for outstanding contributions at Société Générale and Cisco Systems; recipient of a Newbie Award early in my career.</p></div>
+              <div className="fact-row"><Award size={17} /><p>Recognized for outstanding contributions at Société Générale and Cisco Systems</p></div>
+              <div className="fact-row"><Award size={17} /><p>Bridged AI research and production by engineering scalable, high-impact applications that drove measurable business outcomes.</p></div>
+              <div className="fact-row"><Award size={17} /><p>Worked as a part of AI Research team at Fractal Analytics</p></div>
               <div className="fact-row"><GraduationCap size={18} /><p>B.Tech, Computer Science &amp; Engineering <span>·</span> KL University <span>·</span> CGPA 7.8/10</p></div>
+              <div className="fact-row"><Joystick size={18} /><p>Interests: Badminton <span>·</span> Technology <span>·</span> Business </p></div>
+              <div className="fact-row"><Languages size={18} /><p>English <span>·</span> Telugu <span>·</span> Hindi </p></div>
             </article>
             {/* <article className="info-card realtime-card">
               <div className="card-icon"><Radio size={18} /></div>
